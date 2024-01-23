@@ -47,6 +47,13 @@ Console shows `isSignedIn true`
 
 **Actual result:**
 
-Console shows `UserUnAuthenticatedException: User needs to be authenticated to call this API.`
+Console shows 
+```
+UserUnAuthenticatedException: User needs to be authenticated to call this API.
+    at assertAuthTokens (webpack-internal:///(app-pages-browser)/./node_modules/@aws-amplify/auth/dist/esm/providers/cognito/utils/types.mjs:26:15)
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/@aws-amplify/auth/dist/esm/providers/cognito/apis/internal/getCurrentUser.mjs:18:71)
+    at async signInWithSRP (webpack-internal:///(app-pages-browser)/./node_modules/@aws-amplify/auth/dist/esm/providers/cognito/apis/signInWithSRP.mjs:72:23)
+    at async onSubmit (webpack-internal:///(app-pages-browser)/./app/page.tsx:23:36)
+```
 
 :x: **Fail**
