@@ -47,7 +47,7 @@ Console shows `isSignedIn true`
 
 **Actual result:**
 
-Console shows 
+Console shows:
 ```
 UserUnAuthenticatedException: User needs to be authenticated to call this API.
     at assertAuthTokens (webpack-internal:///(app-pages-browser)/./node_modules/@aws-amplify/auth/dist/esm/providers/cognito/utils/types.mjs:26:15)
