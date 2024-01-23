@@ -14,9 +14,9 @@ export default function Home() {
     try {
       const formData = new FormData(event.currentTarget);
       const { username, password} = Object.fromEntries(formData.entries());
-      const response = await signIn({ username: username.toString(), password: password.toString() });
+      const { isSignedIn } = await signIn({ username: username.toString(), password: password.toString() });
 
-      console.log(response);
+      console.log('isSignedIn', isSignedIn);
     } catch (error) {
       console.log(error);
     }
