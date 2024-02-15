@@ -9,7 +9,7 @@ NEXT_PUBLIC_COGNITO_USER_POOL_ID=
 NEXT_PUBLIC_COGNITO_USER_POOL_CLIENT_ID=
 ```
 
-## Issue 1
+## Issue 1 (aws-amplify/amplify-js#13018)
 
 `AuthUserPoolException` when using a custom tokenProvider.
 
