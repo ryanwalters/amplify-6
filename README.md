@@ -11,7 +11,7 @@ NEXT_PUBLIC_COGNITO_USER_POOL_CLIENT_ID=
 
 ## Issue 1
 
-`AuthUserPoolException` when using a custom tokenProvider
+`AuthUserPoolException` when using a custom tokenProvider.
 
 **Steps to reproduce:**
 
