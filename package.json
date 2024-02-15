@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "aws-amplify": "6.0.13",
+    "aws-amplify": "6.0.16",
+    "cookies-next": "4.1.1",
     "next": "14.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -20,6 +21,10 @@
     "@types/react-dom": "18.2.18",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
+    "prettier": "3.2.5",
     "typescript": "5.3.3"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

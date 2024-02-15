@@ -1,22 +1,20 @@
 'use client';
 
-import { signOut } from '@aws-amplify/auth';
-import { FormEvent } from 'react';
 import { useAuth } from '~/hooks/useAuth';
-import styles from "./page.module.css";
+import styles from './page.module.css';
 
 export default function Home() {
-  const { signIn } = useAuth();
+  const { signIn, signOut } = useAuth();
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
+  async function handleSignIn(formData: FormData) {
     try {
-      const formData = new FormData(event.currentTarget);
-      const { username, password} = Object.fromEntries(formData.entries());
-      const { isSignedIn } = await signIn({ username: username.toString(), password: password.toString() });
+      const { username, password } = Object.fromEntries(formData.entries());
+      const signInOutput = await signIn({
+        username: username.toString(),
+        password: password.toString(),
+      });
 
-      console.log('isSignedIn', isSignedIn);
+      console.log(signInOutput);
     } catch (error) {
       console.log(error);
     }
@@ -24,11 +22,13 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <form onSubmit={onSubmit}>
+      <form action={handleSignIn}>
         <input type="text" name="username" placeholder="Username" />
         <input type="password" name="password" placeholder="Password" />
         <button type="submit">Sign In</button>
-        <button type="button" onClick={() => signOut()}>Sign Out</button>
+        <button type="button" onClick={() => signOut()}>
+          Sign Out
+        </button>
       </form>
     </main>
   );
