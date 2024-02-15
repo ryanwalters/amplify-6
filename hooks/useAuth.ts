@@ -9,15 +9,12 @@ import { AuthConfig, KeyValueStorageInterface } from '@aws-amplify/core';
 
 const kvStorage: KeyValueStorageInterface = {
   async setItem(key, value) {
-    console.log('setItem', key, value);
     setCookie(key, value);
   },
   async getItem(key) {
-    console.log('getItem', key, getCookie(key));
     return getCookie(key) ?? null;
   },
   async removeItem(key) {
-    console.log('removeItem', key);
     deleteCookie(key);
   },
   async clear() {

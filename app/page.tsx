@@ -9,12 +9,12 @@ export default function Home() {
   async function handleSignIn(formData: FormData) {
     try {
       const { username, password } = Object.fromEntries(formData.entries());
-      const signInOutput = await signIn({
+      const { isSignedIn } = await signIn({
         username: username.toString(),
         password: password.toString(),
       });
 
-      console.log(signInOutput);
+      console.log('isSignedIn', isSignedIn);
     } catch (error) {
       console.log(error);
     }
