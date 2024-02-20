@@ -1,3 +1,5 @@
+'use client';
+
 import { signIn, signOut } from 'aws-amplify/auth';
 import { Amplify } from 'aws-amplify';
 import {
